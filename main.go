@@ -10,24 +10,38 @@ import (
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	htmlContent := getPage()
 	fmt.Fprintln(w, htmlContent)
+}
 
+func getFinTools() string {
+	var finToolsHTML string = "Financial Tools"
+	return finToolsHTML
 }
 
 func getPage() string {
 	var htmlContent string
+
 	htmlContent = "<!DOCTYPE html>"
 	htmlContent += "<head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>"
-	/*<!DOCTYPE html><html lang=en><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	    <title>Vikrant's Toolkit</title><style>
-	    body {font-family: Arial, sans-serif;margin: 0;padding: 0;background-color:#f0f0f0;}
-		header, footer {background-color: #333;color: #fff;text-align: center;padding: 1em;}
-	    main {padding: 2em;}</style></head>
-		<body><header>Welcome Vikrant!</header>
-	    <main>
-	        <p></p>
-	    </main>
-	    <footer><p>&copy; 2025 Vikrant's Toolkit</p></footer></body></html>"
+	htmlContent += "<title>Personal tools</title>"
+	htmlContent += "<style></style>"
+	htmlContent += "<body><main>Personal Tools<br>...<p>"
+	htmlContent += "<div id='panel'>" + getFinTools() + "</div>"
+	htmlContent += "</p>..."
+	htmlContent += "</main></body>"
+	htmlContent += "<footer><p>&copy; 2025 Vikrant</p></footer>"
+
+	/*
+			<style>
+		    body {font-family: Arial, sans-serif;margin: 0;padding: 0;background-color:#f0f0f0;}
+			header, footer {background-color: #333;color: #fff;text-align: center;padding: 1em;}
+		    main {padding: 2em;}</style></head>
+			<body><header>Welcome Vikrant!</header>
+		    <main>
+		        <p></p>
+		    </main>
+		    <footer><p>&copy; 2025 Vikrant's Toolkit</p></footer></body></html>"
 	*/
+
 	return htmlContent
 }
 
